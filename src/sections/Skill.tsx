@@ -1,5 +1,5 @@
 import React from 'react';
-import SkillIcons from '../SkillIcons';
+import SkillIcons from '../components/SkillIcons';
 
 interface SkillsSectionProps {
   skillsToShow: string[];

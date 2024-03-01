@@ -1,25 +1,33 @@
-import ProjectCard from '../components/ProjectCard'
-import project1Thumbnail from '../assets/project1-thumbnail.png';
-import project2Thumbnail from '../assets/project2-thumbnail.png';
+import React from 'react';
+import ProjectCard from '../components/ProjectCard';
 
-function Project() {
+interface ProjectSectionProps {
+  projects: {
+    image: string;
+    imageAltText: string;
+    title: string;
+    description: string;
+    learnMoreURL?: string;
+  }[];
+}
+
+const Project: React.FC<ProjectSectionProps> = ({ projects }) => {
   return (
     <section id="projects">
+      <div className="section">
       <h2>Projects</h2>
       <div className="projects">
-        <ProjectCard
-          image={project1Thumbnail}
-          imageAltText="A resume webpage that has a green header and black background with rainbow colored connected nodes."
-          title="Project 1"
-          description="Add project description here."
-          learnMoreURL="https://leejmorel.github.io/#/"
-        />
-        <ProjectCard
-          image={project2Thumbnail}
-          imageAltText="An application welcome screen of the software PathKit"
-          title="Project 2"
-          description="Add project description here."
-        />
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={index}
+            image={project.image}
+            imageAltText={project.imageAltText}
+            title={project.title}
+            description={project.description}
+            learnMoreURL={project.learnMoreURL}
+          />
+        ))}
+      </div>
       </div>
     </section>
   );

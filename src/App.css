@@ -94,69 +94,71 @@ p {
   background-color: var(--text-secondary);
 }
 
-#experience,
-#skills,
-#contact {
-  background-color: var(--secondary); 
+.app .section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-#experience h1, 
-#experience h2, 
-#experience h3, 
-#experience h4, 
-#experience h5, 
-#experience h6,
-#skills h1, 
-#skills h2, 
-#skills h3, 
-#skills h4, 
-#skills h5, 
-#skills h6,
-#contact h1, 
-#contact h2, 
-#contact h3, 
-#contact h4, 
-#contact h5, 
-#contact h6 {
+.hidden {
+  display: none;
+}
+
+.app .section:nth-child(even) {
+  background-color: var(--secondary);
+}
+
+.app .section:nth-child(even) h1,
+.app .section:nth-child(even) h2,
+.app .section:nth-child(even) h3,
+.app .section:nth-child(even) h4,
+.app .section:nth-child(even) h5,
+.app .section:nth-child(even) h6 {
   color: var(--text-secondary);
 }
 
-
-#experience p,
-#experience li,
-#skills p,
-#skills li,
-#contact p,
-#contact li {
+.app .section:nth-child(even) p,
+.app .section:nth-child(even) li {
   color: var(--white);
 }
 
-
-.about-content {
-  display: flex;
-  align-items: center; /* Vertically align content */
+/* Common styles for all app icons */
+.app .section .icon {
+  margin: 10px;
+  transition: transform 0.3s ease-in-out;
+  color: var(--text-primary);
 }
 
-.about-text {
-  flex: 1; /* Take remaining space */
+.app .section .icon:hover {
+  transform: scale(1.2);
+  color: var(--black);
 }
 
-.about-icons {
+/* Styles for even sections */
+.app .section:nth-child(even) .icon {
+  color: var(--text-secondary);
+}
+
+.app .section:nth-child(even) .icon:hover {
+  transform: scale(1.2);
+  color: var(--white);
+}
+
+.icons-wrapper {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.about-icon {
-  width: 50px; 
-  height: 50px;
-  margin: 10px;
-  color: var(--text-primary);
+.about-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
 }
 
-.about-icon:hover {
-  transform: scale(1.2);
-  color: var(--black);
+.about-text {
+  flex: 1; /* Take remaining space */
 }
 
 .decorative-svg {
@@ -210,6 +212,18 @@ p {
   padding: 10px;
 }
 
+.app .section:nth-child(even) .project{
+  background-color: var(--primary);
+}
+
+.app .section:nth-child(even) .project h3{
+  color: var(--text-primary);
+}
+
+.app .section:nth-child(even) .project p {
+  color: var(--black);
+}
+
 .project {
   padding: 10px;
   border-radius: 5px;
@@ -246,24 +260,6 @@ p {
   margin-bottom: 10px;
 }
 
-.skill-icons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.skill-icon {
-  width: 50px; 
-  height: 50px;
-  margin: 10px;
-  color: var(--text-secondary);
-}
-
-.skill-icon:hover {
-  transform: scale(1.2);
-  color: var(--white);
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -273,6 +269,16 @@ p {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+.contact-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-option {
+  text-align: center;
 }
 
 footer,

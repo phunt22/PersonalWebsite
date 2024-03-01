@@ -1,33 +1,49 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import accentSVG from '../assets/accent.svg';
 
-function About() {
-    return (
-        <section id="about">
-        <div className="about-content">
-          <div className="about-text">
-            <h2>About Me</h2>
-            <p>I am an undergraduate student majoring in Computer Science at XYZ University. Passionate about software development and eager to learn new technologies.</p>
-            {/* Social media buttons */}
-            <div className="about-icons">
-              <a href="https://github.com/yourgithubusername" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faGithub} aria-label="GitHub profile" className="about-icon"/>
-                <span className="sr-only">{"Github"}</span>
-              </a>
-              <a href="https://www.linkedin.com/in/yourlinkedinprofile" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faLinkedin} aria-label="LinkedIn profile" className="about-icon" />
-                <span className="sr-only">{"LinkedIn"}</span>
-              </a>
+interface AboutProps {
+  name: string;
+  role: string;
+  bio: string;
+  github?: string;
+  linkedin?: string;
+  decorativeImage: string;
+  altText: string;
+}
+
+function About({ name, role, bio, github, linkedin, decorativeImage, altText }: AboutProps) {
+  return (
+    <section id="about">
+      <div className="section">
+      <div className="about-content">
+        <div className="about-text">
+          <h2>About Me</h2>
+          <p>{`I am ${name}, ${role}. ${bio}`}</p>
+          {/* Social media buttons (appear only if github or linkedin links are provided) */}
+          {(github || linkedin) && (
+            <div className="icons-wrapper">
+              {github && (
+                <a href={github} target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faGithub} size="3x" className="icon"/>
+                  <span className="sr-only">{"Github"}</span>
+                </a>
+              )}
+              {linkedin && (
+                <a href={linkedin} target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faLinkedin} size="3x" className="icon" />
+                  <span className="sr-only">{"LinkedIn"}</span>
+                </a>
+              )}
             </div>
-          </div>
-          <div className="decorative-svg">
-            {/* Insert your decorative image here */}
-            <img src={accentSVG} alt="6 tropical leaves with pink and green colors" />
-          </div>
+          )}
         </div>
-      </section>
-    );
-  }
-  
-  export default About;
+        <div className="decorative-svg">
+          <img src={decorativeImage} alt={altText} />
+        </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default About;

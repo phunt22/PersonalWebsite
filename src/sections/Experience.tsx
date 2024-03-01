@@ -1,32 +1,46 @@
-function Experience() {
-    return (
-      <section id="experience">
-        <h2>Experience</h2>
-        <div className="experience-wrapper">
-          <div className="experience-item">
-            <h3>Software Development Intern</h3>
-            <p className="experience-date">May 2022 - August 2022</p>
-            <p className="experience-company">ABC Tech Solutions, New York, NY</p>
+interface ExperienceProps {
+  experiences: {
+    position: string;
+    date: string;
+    company: string;
+    companyLink?: string;
+    highlights: string[];
+  }[];
+}
+
+function Experience({ experiences }: ExperienceProps) {
+  return (
+    <section id="experience">
+      <div className="section">
+      <h2>Experience</h2>
+      <div className="experience-wrapper">
+        {experiences.map((experience, index) => (
+          <div className="experience-item" key={index}>
+            <h3>{experience.position}</h3>
+            <p className="experience-date">{experience.date}</p>
+            {experience.companyLink ? (
+              <a
+                href={experience.companyLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="experience-company-link"
+              >
+                {experience.company}
+              </a>
+            ) : (
+              <p className="experience-company">{experience.company}</p>
+            )}
             <ul className="experience-highlights">
-              <li>Collaborated with a team of developers to create and implement new features for the company's web application.</li>
-              <li>Assisted in debugging and troubleshooting issues in existing codebase.</li>
-              <li>Participated in code reviews and provided feedback on colleagues' code.</li>
+              {experience.highlights.map((highlight, idx) => (
+                <li key={idx}>{highlight}</li>
+              ))}
             </ul>
           </div>
-          <div className="experience-item">
-            <h3>Computer Science Tutor</h3>
-            <p className="experience-date">September 2021 - Present</p>
-            <p className="experience-company">XYZ University, Department of Computer Science, City, ST</p>
-            <ul className="experience-highlights">
-              <li>Provided one-on-one tutoring to undergraduate students in computer science courses.</li>
-              <li>Assisted students with understanding programming concepts and assignments in languages such as Java, Python, and C++.</li>
-              <li>Developed and conducted workshops on data structures and algorithms.</li>
-            </ul>
-          </div>
-          {/* Add more experience items as needed */}
-        </div>
-      </section>
-    );
-  }
-  
-  export default Experience;
+        ))}
+      </div>
+      </div>
+    </section>
+  );
+}
+
+export default Experience;

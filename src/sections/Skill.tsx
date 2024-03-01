@@ -3,17 +3,31 @@ import SkillIcons from '../components/SkillIcons';
 
 interface SkillsSectionProps {
   skillsToShow: string[];
+  nonTechSkills?: string[];
 }
 
-const Skill: React.FC<SkillsSectionProps> = ({ skillsToShow }) => {
+const Skills: React.FC<SkillsSectionProps> = ({ skillsToShow, nonTechSkills }) => {
+  const separator = ' • '; // You can customize the separator
+
   return (
     <section id="skills">
+      <div className="section">
       <h2>Skills</h2>
-      <SkillIcons skillsToShow={skillsToShow} />
-      <p>Proficient in HTML5, CSS3, JavaScript, React, Java, Python, Git, and more.</p>
+      {/* 
+        Hide decorative icons from screen readers.
+        These icons are purely decorative and do not convey meaningful information to users relying on screen readers.
+      */}
+      <div aria-hidden={true}>
+        <SkillIcons skillsToShow={skillsToShow} />
+      </div>
+      {nonTechSkills && nonTechSkills.length > 0 && (
+        <div>
+          <p>{[...skillsToShow, ...nonTechSkills].join(separator)}</p>
+        </div>
+      )}
+      </div>
     </section>
   );
 }
 
-export default Skill;
-
+export default Skills;

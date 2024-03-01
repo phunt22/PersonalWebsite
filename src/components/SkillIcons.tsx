@@ -166,10 +166,10 @@ const skillsMap: { [key: string]: Skill } = {
       .filter(Boolean); // Filter out undefined values
   
     return (
-      <div className="skill-icons">
+      <div className="icons-wrapper">
         {filteredSkills.map((skill, index) => (
           <a href={skill.websiteUrl} target="_blank" rel="noopener noreferrer" key={index} aria-label={skill.name}>
-            <FontAwesomeIcon icon={skill.icon || defaultIcon} size="3x" className="skill-icon" />
+            <FontAwesomeIcon icon={skill.icon || defaultIcon} size="3x" className="icon" />
             <span className="sr-only">{skill.name}</span>
           </a>
         ))}

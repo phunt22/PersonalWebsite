@@ -43,8 +43,8 @@ function App() {
     name: yourName,
     role: 'Your Role',
     bio: 'Your Bio',
-    github: yourLinkedin,
-    linkedin: yourGithub,
+    github: yourGithub,
+    linkedin: yourLinkedin,
     decorativeImage: accentSVG,
     altText: '6 tropical leaves with pink and green colors',
   };
@@ -85,6 +85,7 @@ function App() {
   ];
   
   // TODO: Update the skills list with your own
+  // Note: Most tech skills include icons which will show under "SkillsIcons", you may wish to add more to the component if you have something specific
   const userSkillsToShow = ['HTML5', 'CSS3', 'JavaScript', 'React', 'Java', 'Python', 'Git']; // Example skills
   const userNonTechSkills = ['Communication', 'Problem Solving', 'Teamwork'];
 
@@ -111,6 +112,8 @@ function App() {
     { key: 'education', Component: <Education educationEntries={userEducation} /> },
     { key: 'skills', Component: <Skill skillsToShow={userSkillsToShow} nonTechSkills={userNonTechSkills} /> },
     { key: 'projects', Component: <Project projects={userProjects} /> },
+    //TODO: If you don't provide certian information for contact, remove that prop, fo example, no phone number would look like:
+    // { key: 'contact', Component: <Contact emailAddress={yourEmail} linkedinURL={yourLinkedin} githubURL={yourGithub} /> },
     { key: 'contact', Component: <Contact emailAddress={yourEmail} linkedinURL={yourLinkedin} githubURL={yourGithub} phoneNumber={yourPhoneNumber} /> },
     //add or change sections as needed
   ];

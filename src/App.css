@@ -104,6 +104,11 @@ p {
   display: none;
 }
 
+.app .section a {
+  color: var(--black);
+  text-decoration: underline;
+}
+
 .app .section:nth-child(even) {
   background-color: var(--secondary);
 }
@@ -120,6 +125,11 @@ p {
 .app .section:nth-child(even) p,
 .app .section:nth-child(even) li {
   color: var(--white);
+}
+
+.app .section:nth-child(even) a {
+  color: var(--white);
+  text-decoration: underline;
 }
 
 /* Common styles for all app icons */
@@ -212,6 +222,11 @@ p {
   padding: 10px;
 }
 
+.app .section .project a {
+  color: var(--white);
+  text-decoration: underline;
+}
+
 .app .section:nth-child(even) .project{
   background-color: var(--primary);
 }
@@ -223,6 +238,12 @@ p {
 .app .section:nth-child(even) .project p {
   color: var(--black);
 }
+
+.app .section:nth-child(even) .project a {
+  color: var(--black);
+  text-decoration: underline;
+}
+
 
 .project {
   padding: 10px;

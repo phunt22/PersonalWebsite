@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://leejmorel.github.io/AccessibleWebDesign",
+  "homepage": "https://phunt22.github.io/PersonalWebsite",
   "engines": {
     "npm": "^10.2.4",
     "yarn": "please-use-npm"
@@ -25,7 +25,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.56",
+    "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",

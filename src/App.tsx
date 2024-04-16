@@ -23,7 +23,7 @@ function App() {
   //TODO: under public replace the Resume.pdf file with your most recent resume for download
   //TODO: in index.html replace the website title and icon
   //TODO: in package.json replace the homepage with your own
-  const yourName = "MayTrix"; // TODO: Replace with your name
+  const yourName = "Will"; // TODO: Replace with your name
   const yourEmail = 'your.email@example.com'; // Replace with your email
   const yourLinkedin = 'https://www.linkedin.com/in/yourlinkedinprofile'; // Replace with your LinkedIn profile
   const yourGithub = 'https://github.com/yourgithubusername'; // Replace with your GitHub profile
@@ -83,7 +83,7 @@ function App() {
     },
     // Add more education entries as needed
   ];
-  
+
   // TODO: Update the skills list with your own
   // Note: Most tech skills include icons which will show under "SkillsIcons", you may wish to add more to the component if you have something specific
   const userSkillsToShow = ['HTML5', 'CSS3', 'JavaScript', 'React', 'Java', 'Python', 'Git']; // Example skills
@@ -129,7 +129,7 @@ function App() {
           </div>
           <div>
             {/* TODO: Replace with your own resume file */}
-            <a href="/Resume.pdf" download="Resume.pdf">
+            <a href="/PersonalWebsite/Resume.pdf" download="Resume.pdf">
               <button className="download-button">Download Resume</button>
             </a>
           </div>
